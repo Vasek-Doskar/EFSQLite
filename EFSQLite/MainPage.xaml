@@ -21,7 +21,7 @@
                      />
 
             <Button Text="Smazat" HorizontalOptions="Center" Clicked="Smazat"/>
-            <Button Text="Detail" HorizontalOptions="Center" IsEnabled="False" x:Name="detailBTN" Clicked="Detajly"/>
+            <Button Text="Detail" HorizontalOptions="Center" x:Name="detailBTN" Clicked="Detajly"/>
 
         </VerticalStackLayout>
     </ScrollView>
