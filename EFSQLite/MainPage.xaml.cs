@@ -25,7 +25,26 @@ public partial class MainPage : ContentPage
 		};
 
 		_context.Add(newStudent); // přidá záznam do Data Setu
-		_context.SaveChanges(); // Uloží data do databáze!!!
+		_context.SaveChanges(); // uloží změny do databáze !!!!!!
+        refresh();
+	}
+
+	private void Smazat(object sender, EventArgs e)
+	{
+		Student keSmazani = lst.SelectedItem as Student;
+		if(keSmazani != null )
+		{
+			_context.Remove(keSmazani); // odebrání studenta z data setu
+			_context.SaveChanges(); // uloží změny do databáze
+		}
+	}
+
+
+
+    void refresh()
+	{
+		lst.ItemsSource = null;
+		lst.ItemsSource = _context.Students.ToList();
 	}
 
 

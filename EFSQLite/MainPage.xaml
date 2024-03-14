@@ -18,7 +18,9 @@
                       Header="300" 
                       HorizontalOptions="Center" 
                       BackgroundColor="LightGrey"/>
-            
+
+            <Button Text="Smazat" HorizontalOptions="Center" Clicked="Smazat"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
