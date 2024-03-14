@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EFSQLite.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Entry x:Name="forName" Placeholder="Name" WidthRequest="250" HorizontalOptions="Center"/>
+            <Entry x:Name="forSurname" Placeholder="Surname" WidthRequest="250" HorizontalOptions="Center"/>
+            <Button Text="Uložit" HorizontalOptions="Center" Clicked="SaveStudent"/>
+
+            <ListView x:Name="lst" 
+                      WidthRequest="250"
+                      Header="300" 
+                      HorizontalOptions="Center" 
+                      BackgroundColor="LightGrey"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
