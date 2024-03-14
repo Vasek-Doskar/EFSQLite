@@ -22,7 +22,7 @@ public partial class MainPage : ContentPage
 			Surname = forSurname.Text 
 		};
 
-		_context.Add(newStudent); // přidá záznam do Data Setu
+        _context.Add(newStudent); // přidá záznam do Data Setu
 		_context.SaveChanges(); // uloží změny do databáze !!!!!!
         refresh();
 	}
@@ -36,6 +36,13 @@ public partial class MainPage : ContentPage
 			_context.SaveChanges(); // uloží změny do databáze
             refresh();
         }	
+	}
+
+	private async void Detajly(object sender, EventArgs e)
+	{
+		int id = (lst.SelectedItem as Student).Id;
+		DetailPage dp = new(id, _context);
+		await Navigation.PushAsync(dp);
 	}
 
     void refresh()
