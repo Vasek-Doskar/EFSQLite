@@ -1,6 +1,5 @@
 ﻿using EFSQLite.Data;
 using EFSQLite.Models;
-using System.Runtime.InteropServices.ObjectiveC;
 
 namespace EFSQLite;
 
@@ -13,7 +12,6 @@ public partial class MainPage : ContentPage
 		_context = new();
 		InitializeComponent();
 		lst.ItemsSource = _context.Students.ToList(); // připojení zdroje dat k ListView
-
 	}
 
 	private void SaveStudent(object sender, EventArgs e)
@@ -34,19 +32,16 @@ public partial class MainPage : ContentPage
 		Student keSmazani = lst.SelectedItem as Student;
 		if(keSmazani != null )
 		{
-			_context.Remove(keSmazani); // odebrání studenta z data setu
+			_context.Students.Remove(keSmazani); // odebrání studenta z data setu
 			_context.SaveChanges(); // uloží změny do databáze
-		}
+            refresh();
+        }	
 	}
-
-
 
     void refresh()
 	{
 		lst.ItemsSource = null;
 		lst.ItemsSource = _context.Students.ToList();
 	}
-
-
 }
 

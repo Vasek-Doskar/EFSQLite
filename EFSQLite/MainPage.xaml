@@ -15,7 +15,7 @@
 
             <ListView x:Name="lst" 
                       WidthRequest="250"
-                      Header="300" 
+                      Header="Studenti" 
                       HorizontalOptions="Center" 
                       BackgroundColor="LightGrey"/>
 
